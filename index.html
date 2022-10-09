@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Leaflet css file-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.1/dist/leaflet.css"
+   integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+   crossorigin=""/>
+    <!--Leaflet javascript file-->
+   <script src="https://unpkg.com/leaflet@1.9.1/dist/leaflet.js"
+   integrity="sha256-NDI0K41gVbWqfkkaHj15IzU7PtMoelkzyKp8TOaFQ3s="
+   crossorigin=""></script>
+   <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>Kiambu</title>
+</head>
+<body>
+    <h1 class = "first-title">My First Web Map</h1>
+    
+    <div id="map"></div>
+    <style>
+       
+        .first-title:hover{
+            color: rgb(5, 26, 161);
+        }
+        .first-title{
+            color:rgb(217, 15, 116);
+            text-align: center;
+            padding: 0.1em;
+            background-color:white ;
+        }
+        #map{
+            height: 600px;
+        }
+        footer{
+            background: black;
+        }
+        .footer-col{
+            padding-right: 30%;
+        }
+        
+    </style>
+
+    <script>
+        var map = L.map('map').setView([-1.1040702398927842,37.01374989963308], 10);
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '© OpenStreetMap'
+    }).addTo(map);
+
+    var marker = L.marker([-1.1040702398927842,37.01374989963308]).addTo(map);
+    marker.bindPopup("<b>Find Me</b><br>I'm here.").openPopup();
+    </script>
+     
+    <footer class="footer">
+        <div class="footer-col">
+            <h4>Contributers</h4>
+            <ul>
+                <li><a href="https://www.openstreetmap.org/#map=15/-1.2681/36.7569">OpenStreetMap</a></li>
+                <li><a href="https://leafletjs.com/">Leafletjs</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Authors</h4>
+            <p1>Work done by Valentine Irungu.<br>Reg no, ENC222-0135/2019</p1>
+            <a href="mailto:valentine.irungu@students.jkuat.ac.ke" class="btn btn-primary">Send me an Email</a>
+        </div>
+        <div class="footer-col">
+            <h4>Marginal Information</h4>
+            <p1>
+                This is a functional map extracted from openstreet map by the use of leaflet js. It's my first web mapping page.
+            </p1>
+        </div>
+        </div>
+    </footer>
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+   </body>
+</html>
